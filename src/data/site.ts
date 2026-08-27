@@ -6,7 +6,7 @@ export const profile = {
 		zh: '潘润南',
 	} satisfies Record<Locale, string>,
 	shortName: 'Runnan',
-	email: '',
+	email: 'runnan.pan@outlook.com',
 	github: 'https://github.com/runnan-pan',
 	linkedin: 'https://www.linkedin.com/in/runnan-pan',
 } as const;
