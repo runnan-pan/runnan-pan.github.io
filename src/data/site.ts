@@ -3,7 +3,7 @@ import type { Locale } from '../i18n/config';
 export const profile = {
 	name: {
 		en: 'Runnan Pan',
-		zh: '潘润楠',
+		zh: '潘润南',
 	} satisfies Record<Locale, string>,
 	shortName: 'Runnan',
 	email: '',
