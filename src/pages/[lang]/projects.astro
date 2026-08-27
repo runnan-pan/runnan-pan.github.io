@@ -1,0 +1,22 @@
+---
+import PageIntro from '../../components/PageIntro.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../data/projects';
+import type { Locale } from '../../i18n/config';
+import { getLocaleStaticPaths, useTranslations } from '../../i18n/utils';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+	return getLocaleStaticPaths();
+}
+
+const lang = Astro.params.lang as Locale;
+const t = useTranslations(lang);
+---
+
+<BaseLayout lang={lang} route="projects">
+	<PageIntro title={t.projects.title} intro={t.projects.intro} />
+	<section class="mx-auto grid max-w-5xl gap-12 px-5 pb-8 pt-10 sm:px-8 md:grid-cols-2">
+		{projects.map((item) => <ProjectCard item={item} lang={lang} />)}
+	</section>
+</BaseLayout>

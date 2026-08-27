@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import type { ProjectItem } from '../data/projects';
+import type { Locale } from '../i18n/config';
+import { localize } from '../i18n/utils';
+
+interface Props {
+	item: ProjectItem;
+	lang: Locale;
+}
+
+const { item, lang } = Astro.props;
+const title = localize(item.title, lang);
+---
+
+<article class="group">
+	<Image
+		src={item.image}
+		alt={title}
+		class="aspect-[3/2] w-full rounded-sm object-cover"
+		widths={[400, 800, 1200]}
+		sizes="(min-width: 768px) 50vw, 100vw"
+	/>
+	<h2 class="mt-4 font-serif text-2xl tracking-tight">
+		{
+			item.href ? (
+				<a href={item.href} class="hover:text-accent" rel="noreferrer" target="_blank">
+					{title}
+				</a>
+			) : (
+				title
+			)
+		}
+	</h2>
+	<p class="mt-2 text-muted">{localize(item.summary, lang)}</p>
+	<ul class="mt-4 flex flex-wrap gap-2">
+		{
+			item.tags.map((tag) => (
+				<li class="border border-line px-2 py-0.5 text-xs tracking-wide text-muted">{tag}</li>
+			))
+		}
+	</ul>
+</article>

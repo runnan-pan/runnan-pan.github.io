@@ -1,0 +1,62 @@
+---
+import { images } from '../assets/images/registry';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { localeMeta, locales, type Locale, type RouteKey } from '../i18n/config';
+import { localePath, useTranslations } from '../i18n/utils';
+import '../styles/global.css';
+
+interface Props {
+	lang: Locale;
+	route: RouteKey;
+}
+
+const { lang, route } = Astro.props;
+const t = useTranslations(lang);
+const title = t.pageTitle(route);
+const description = t.pageDescription(route);
+const canonical = new URL(localePath(lang, route), Astro.site);
+const ogImage = new URL(images.shared.ogDefault.src, Astro.site);
+---
+
+<!doctype html>
+<html lang={localeMeta[lang].htmlLang}>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		{
+			locales.map((locale) => (
+				<link rel="alternate" hreflang={localeMeta[locale].htmlLang} href={new URL(localePath(locale, route), Astro.site)} />
+			))
+		}
+		<link rel="alternate" hreflang="x-default" href={new URL(localePath('en', route), Astro.site)} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:locale" content={localeMeta[lang].ogLocale} />
+		<meta property="og:image" content={ogImage} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="min-h-screen flex flex-col antialiased">
+		<Header lang={lang} route={route} />
+		<main class="flex-1">
+			<slot />
+		</main>
+		<Footer lang={lang} />
+	</body>
+</html>

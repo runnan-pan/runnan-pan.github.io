@@ -1,0 +1,30 @@
+---
+import { defaultLocale } from '../i18n/config';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex" />
+		<title>Runnan Pan</title>
+		<script is:inline>
+			(function () {
+				var stored = localStorage.getItem('preferred-locale');
+				var locale =
+					stored === 'zh' || stored === 'en'
+						? stored
+						: (navigator.language || '').toLowerCase().startsWith('zh')
+							? 'zh'
+							: 'en';
+				location.replace('/' + locale + '/');
+			})();
+		</script>
+		<meta http-equiv="refresh" content={`0; url=/${defaultLocale}/`} />
+		<link rel="canonical" href={`/${defaultLocale}/`} />
+	</head>
+	<body>
+		<p><a href={`/${defaultLocale}/`}>Continue</a></p>
+	</body>
+</html>

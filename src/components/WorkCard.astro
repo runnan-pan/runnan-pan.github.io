@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import type { WorkItem } from '../data/work';
+import type { Locale } from '../i18n/config';
+import { localize } from '../i18n/utils';
+
+interface Props {
+	item: WorkItem;
+	lang: Locale;
+}
+
+const { item, lang } = Astro.props;
+---
+
+<article class="grid gap-6 border-t border-line py-10 sm:grid-cols-[minmax(0,220px)_1fr] sm:gap-10">
+	<Image
+		src={item.image}
+		alt={item.company}
+		class="aspect-[8/5] w-full rounded-sm object-cover"
+		widths={[220, 440, 800]}
+		sizes="(min-width: 640px) 220px, 100vw"
+	/>
+	<div>
+		<p class="text-sm text-muted">{localize(item.period, lang)}</p>
+		<h2 class="mt-1 font-serif text-2xl tracking-tight">
+			{
+				item.href ? (
+					<a href={item.href} class="hover:text-accent" rel="noreferrer" target="_blank">
+						{item.company}
+					</a>
+				) : (
+					item.company
+				)
+			}
+		</h2>
+		<p class="mt-1 text-muted">{localize(item.role, lang)} · {localize(item.location, lang)}</p>
+		<p class="mt-4 text-ink/90">{localize(item.summary, lang)}</p>
+		<ul class="mt-4 list-disc space-y-2 pl-5 text-muted">
+			{localize(item.highlights, lang).map((highlight) => <li>{highlight}</li>)}
+		</ul>
+	</div>
+</article>

@@ -1,0 +1,75 @@
+---
+import { localeMeta, locales, navRoutes, type Locale, type RouteKey } from '../i18n/config';
+import { localePath, localize, switchLocalePath, useTranslations } from '../i18n/utils';
+import { profile } from '../data/site';
+
+interface Props {
+	lang: Locale;
+	route: RouteKey;
+}
+
+const { lang, route } = Astro.props;
+const t = useTranslations(lang);
+const otherLocale = locales.find((locale) => locale !== lang) ?? 'en';
+const switchHref = switchLocalePath(Astro.url.pathname, otherLocale);
+---
+
+<header class="border-b border-line">
+	<div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
+		<a href={localePath(lang)} class="font-serif text-lg tracking-tight text-ink hover:text-accent">
+			{localize(profile.name, lang)}
+		</a>
+		<div class="flex items-center gap-5 sm:gap-7">
+			<nav aria-label="Primary" class="hidden items-center gap-5 sm:flex">
+				{
+					navRoutes.map((item) => (
+						<a
+							href={localePath(lang, item)}
+							class:list={[
+								'text-sm tracking-wide transition-colors hover:text-accent',
+								route === item ? 'text-ink' : 'text-muted',
+							]}
+							aria-current={route === item ? 'page' : undefined}
+						>
+							{t.nav[item]}
+						</a>
+					))
+				}
+			</nav>
+			<a
+				href={switchHref}
+				data-locale={otherLocale}
+				class="lang-switch text-sm text-muted hover:text-ink"
+				aria-label={t.lang.switchTo}
+			>
+				<span class="sr-only">{t.lang.label}: </span>
+				{localeMeta[otherLocale].label}
+			</a>
+		</div>
+	</div>
+	<nav aria-label="Primary" class="flex gap-5 overflow-x-auto border-t border-line px-5 py-3 sm:hidden">
+		{
+			navRoutes.map((item) => (
+				<a
+					href={localePath(lang, item)}
+					class:list={[
+						'shrink-0 text-sm tracking-wide hover:text-accent',
+						route === item ? 'text-ink' : 'text-muted',
+					]}
+					aria-current={route === item ? 'page' : undefined}
+				>
+					{t.nav[item]}
+				</a>
+			))
+		}
+	</nav>
+</header>
+
+<script>
+	document.querySelectorAll<HTMLAnchorElement>('.lang-switch').forEach((link) => {
+		link.addEventListener('click', () => {
+			const locale = link.dataset.locale;
+			if (locale) localStorage.setItem('preferred-locale', locale);
+		});
+	});
+</script>

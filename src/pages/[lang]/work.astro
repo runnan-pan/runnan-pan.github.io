@@ -1,0 +1,22 @@
+---
+import PageIntro from '../../components/PageIntro.astro';
+import WorkCard from '../../components/WorkCard.astro';
+import { work } from '../../data/work';
+import type { Locale } from '../../i18n/config';
+import { getLocaleStaticPaths, useTranslations } from '../../i18n/utils';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+	return getLocaleStaticPaths();
+}
+
+const lang = Astro.params.lang as Locale;
+const t = useTranslations(lang);
+---
+
+<BaseLayout lang={lang} route="work">
+	<PageIntro title={t.work.title} intro={t.work.intro} />
+	<section class="mx-auto max-w-5xl px-5 pb-8 pt-6 sm:px-8">
+		{work.map((item) => <WorkCard item={item} lang={lang} />)}
+	</section>
+</BaseLayout>

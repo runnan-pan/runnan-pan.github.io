@@ -1,0 +1,41 @@
+---
+import PageIntro from '../../components/PageIntro.astro';
+import { profile } from '../../data/site';
+import type { Locale } from '../../i18n/config';
+import { getLocaleStaticPaths, useTranslations } from '../../i18n/utils';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+	return getLocaleStaticPaths();
+}
+
+const lang = Astro.params.lang as Locale;
+const t = useTranslations(lang);
+---
+
+<BaseLayout lang={lang} route="contact">
+	<PageIntro title={t.contact.title} intro={t.contact.intro} />
+	<section class="mx-auto max-w-5xl px-5 pb-8 pt-10 sm:px-8">
+		<ul class="space-y-4 text-lg">
+			<li>
+				<a class="text-ink hover:text-accent" href={profile.linkedin} rel="noreferrer" target="_blank">
+					{t.contact.linkedin}
+				</a>
+			</li>
+			<li>
+				<a class="text-ink hover:text-accent" href={profile.github} rel="noreferrer" target="_blank">
+					{t.contact.github}
+				</a>
+			</li>
+			{
+				profile.email && (
+					<li>
+						<a class="text-ink hover:text-accent" href={`mailto:${profile.email}`}>
+							{t.contact.email}
+						</a>
+					</li>
+				)
+			}
+		</ul>
+	</section>
+</BaseLayout>

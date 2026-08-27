@@ -1,0 +1,26 @@
+---
+import { profile } from '../data/site';
+import type { Locale } from '../i18n/config';
+import { localePath, localize, useTranslations } from '../i18n/utils';
+
+interface Props {
+	lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-20 border-t border-line">
+	<div class="mx-auto flex max-w-5xl flex-col gap-3 px-5 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8">
+		<p>
+			© {year} {localize(profile.name, lang)}. {t.footer.rights}
+		</p>
+		<div class="flex gap-5">
+			<a class="hover:text-ink" href={localePath(lang, 'contact')}>{t.nav.contact}</a>
+			<a class="hover:text-ink" href={profile.github} rel="noreferrer" target="_blank">GitHub</a>
+			<a class="hover:text-ink" href={profile.linkedin} rel="noreferrer" target="_blank">LinkedIn</a>
+		</div>
+	</div>
+</footer>
