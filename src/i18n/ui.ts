@@ -24,9 +24,9 @@ export const ui = {
 			contactDescription: 'Get in touch with Runnan Pan.',
 		},
 		home: {
-			kicker: 'Software Engineer · Sydney',
+			kicker: 'Software Engineer · Sydney · 5+ years',
 			headline: 'I build web products that stay fast after launch week.',
-			lede: 'Currently at carsales, working on the sites car dealers run their businesses on. Typed code, clear ownership, and pages that still perform at scale.',
+			lede: 'Currently at carsales, working on the sites car dealers run their businesses on. Daily driver of Claude and Cursor for code authoring, review, and tests — typed code, clear ownership, and pages that still perform at scale.',
 			aboutCta: 'About me',
 			workCta: 'See work',
 			featuredTitle: 'Selected work',
@@ -34,11 +34,34 @@ export const ui = {
 		},
 		about: {
 			title: 'About',
-			p1: 'I am a software engineer in Sydney, currently at carsales. I work on the web products that car dealers rely on every day — configurable sites, shipped at scale, and kept fast as they grow.',
-			p2: 'Before that I led a small team at Jobpin, building hiring product with Next.js. Earlier I worked across full-stack delivery: React, TypeScript, PHP, and the unglamorous work of making a site actually ship.',
+			p1: 'I am a full-stack developer based in Sydney with five years of experience in web development. I am currently a Software Engineer at carsales, working on the products car dealers rely on every day — configurable sites, shipped at scale, and kept fast as they grow.',
+			p2: 'I integrate AI-assisted development tools (Claude, Cursor) into daily engineering work for code authoring, review, and tests. Earlier, I led a six-person team at Jobpin building hiring product with Next.js, and shipped full-stack work with React, TypeScript, PHP, and Node.',
 			p3: 'I care about the things that make software last: migrating JavaScript to TypeScript without stalling the team, designing features that can be tailored without forking the codebase, and leaving pages faster than I found them.',
 			nowTitle: 'Right now',
-			nowBody: 'Building and maintaining dealer websites at carsales. Based in Sydney.',
+			nowBody: 'Building and maintaining dealer websites at carsales. Daily use of Claude and Cursor to accelerate delivery and keep quality high. Based in Sydney.',
+			educationTitle: 'Education',
+			education: [
+				{
+					degree: 'Diploma in Website Development',
+					school: 'TAFE NSW, Sydney',
+					period: 'Jan – Jun 2022',
+				},
+				{
+					degree: 'Bachelor of Engineering in Civil Engineering (Honours)',
+					school: 'University of New South Wales, Sydney',
+					period: 'Feb 2015 – Dec 2017',
+				},
+				{
+					degree: 'Bachelor of Engineering in Mechanical Engineering (Honours)',
+					school: 'Fuzhou University, Fujian, China',
+					period: 'Sep 2010 – Jun 2014',
+				},
+			],
+			languagesTitle: 'Languages',
+			languages: ['English', 'Mandarin'],
+			interestsTitle: 'Interests',
+			interests:
+				'Cycling, badminton, ultimate frisbee, piano, guitar, hiking, ice-skating, table tennis.',
 		},
 		work: {
 			title: 'Work',
@@ -91,9 +114,9 @@ export const ui = {
 			contactDescription: '联系潘润南。',
 		},
 		home: {
-			kicker: '软件工程师 · 悉尼',
+			kicker: '软件工程师 · 悉尼 · 5 年+',
 			headline: '我做上线之后仍然快的网页产品。',
-			lede: '目前在 carsales，参与汽车经销商日常使用的网站。类型、清晰的职责边界，以及能规模化运行的页面。',
+			lede: '目前在 carsales，参与汽车经销商日常使用的网站。日常使用 Claude 和 Cursor 做代码编写、评审与测试 —— 类型、清晰的职责边界，以及能规模化运行的页面。',
 			aboutCta: '关于我',
 			workCta: '查看经历',
 			featuredTitle: '部分经历',
@@ -101,11 +124,33 @@ export const ui = {
 		},
 		about: {
 			title: '关于',
-			p1: '我是一名在悉尼工作的软件工程师，目前在 carsales。我参与的是汽车经销商每天都在用的网站产品：可配置、能规模化交付，并且随着功能增加仍然保持速度。',
-			p2: '此前我在 Jobpin 带过一个小团队，用 Next.js 做招聘产品。再往前，我做过完整的全栈交付：React、TypeScript、PHP，以及把一个站点真正上线的那些具体工作。',
+			p1: '我是常驻悉尼的全栈开发者，有 5 年 Web 开发经验。目前担任 carsales 的软件工程师，参与的产品是汽车经销商每天都在用的网站：可配置、能规模化交付，并且随着功能增加仍然保持速度。',
+			p2: '我把 AI 辅助开发工具（Claude、Cursor）深度整合进日常工程：用于代码编写、评审与测试。此前在 Jobpin 带领 6 人团队用 Next.js 做招聘产品，也做过 React、TypeScript、PHP、Node 等全栈交付。',
 			p3: '我更在意让软件能用得久的事情：把 JavaScript 迁到 TypeScript 而不拖垮团队，做出能按客户定制、又不必分叉代码库的功能，以及离开时页面比接手时更快。',
 			nowTitle: '现在',
-			nowBody: '在 carsales 建设和维护经销商网站。生活在悉尼。',
+			nowBody: '在 carsales 建设和维护经销商网站。日常使用 Claude 和 Cursor 提升交付效率，并保证质量。生活在悉尼。',
+			educationTitle: '教育背景',
+			education: [
+				{
+					degree: '网站开发大专文凭 (Diploma in Website Development)',
+					school: 'TAFE NSW，悉尼',
+					period: '2022年1月 – 6月',
+				},
+				{
+					degree: '土木工程荣誉学士',
+					school: '新南威尔士大学 (UNSW)，悉尼',
+					period: '2015年2月 – 2017年12月',
+				},
+				{
+					degree: '机械工程荣誉学士',
+					school: '福州大学，中国福建',
+					period: '2010年9月 – 2014年6月',
+				},
+			],
+			languagesTitle: '语言',
+			languages: ['英语', '普通话'],
+			interestsTitle: '兴趣',
+			interests: '骑行、羽毛球、飞盘、钢琴、吉他、徒步、滑冰、乒乓球。',
 		},
 		work: {
 			title: '经历',
