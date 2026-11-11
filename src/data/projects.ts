@@ -53,6 +53,19 @@ export const projects: ProjectItem[] = [
 		tags: ['Next.js', 'TypeScript', 'Claude Code'],
 	},
 	{
+		id: 'dealer-header-footer',
+		image: images.projects.dealerNav,
+		title: {
+			en: 'Dealer header and footer template',
+			zh: '经销商页头页脚模板',
+		},
+		summary: {
+			en: 'The original 2024 header and footer for Lexus dealer sites in HTML, CSS and JavaScript, with desktop and mobile mega-navigation, model filters by body and fuel type, branch tabs and opening-hours dropdowns.',
+			zh: '2024 年为 Lexus 经销商站点做的页头和页脚（HTML、CSS、JavaScript），包含桌面和移动端导航、按车身和燃料类型的车型筛选、分店标签页和营业时间下拉。',
+		},
+		tags: ['HTML', 'CSS', 'JavaScript'],
+	},
+	{
 		id: 'jobpin-product',
 		image: images.projects.jobpin,
 		title: {

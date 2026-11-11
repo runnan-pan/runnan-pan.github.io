@@ -14,13 +14,16 @@
  */
 import portrait from './portraits/portrait.svg';
 import carfacts from './projects/carfacts.svg';
+import dealerNav from './projects/dealer-nav.svg';
 import dealerSites from './projects/dealer-sites.svg';
 import jobpinProject from './projects/jobpin.svg';
 import typescript from './projects/typescript.svg';
 import ogDefault from './shared/og-default.svg';
 import carsales from './work/carsales.svg';
+import construction from './work/construction.svg';
 import jobpin from './work/jobpin.svg';
 import mk from './work/mk.svg';
+import tafe from './work/tafe.svg';
 
 export const images = {
 	portraits: {
@@ -30,9 +33,12 @@ export const images = {
 		carsales,
 		jobpin,
 		mk,
+		tafe,
+		construction,
 	},
 	projects: {
 		dealerSites,
+		dealerNav,
 		carfacts,
 		typescript,
 		jobpin: jobpinProject,
