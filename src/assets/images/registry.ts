@@ -19,9 +19,9 @@ import dealerSites from './projects/dealer-sites.svg';
 import jobpinProject from './projects/jobpin.svg';
 import typescript from './projects/typescript.svg';
 import ogDefault from './shared/og-default.svg';
-import carsales from './work/carsales.svg';
+import carsales from './work/carsales.png';
 import construction from './work/construction.svg';
-import jobpin from './work/jobpin.svg';
+import jobpin from './work/jobpin.png';
 import mk from './work/mk.svg';
 import tafe from './work/tafe.png';
 
