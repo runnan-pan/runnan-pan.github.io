@@ -34,22 +34,35 @@ export const projects: ProjectItem[] = [
 			zh: 'JavaScript 到 TypeScript',
 		},
 		summary: {
-			en: 'A component-library migration that improved maintainability without stopping feature work, including reviews and team training.',
-			zh: '在不停功能开发的前提下迁移组件库，并配合评审和团队培训，提升可维护性。',
+			en: 'A component-library migration that improved maintainability without stopping feature work: 670+ files converted along the way.',
+			zh: '在不停功能开发的前提下迁移组件库，提升可维护性，期间转换了 670 多个文件。',
 		},
 		tags: ['TypeScript', 'React', 'DX'],
+	},
+	{
+		id: 'carfacts',
+		image: images.projects.carfacts,
+		title: {
+			en: 'Embeddable purchase flow',
+			zh: '可嵌入的购买流程',
+		},
+		summary: {
+			en: 'A Next.js checkout wizard for vehicle-history reports, with card and PayPal payments, email verification and abuse protection. Built with an AI-driven workflow and reviewed and tested by hand.',
+			zh: '用 Next.js 做的车辆历史报告购买向导，支持刷卡和 PayPal 支付、邮箱验证与防滥用。采用 AI 驱动的开发流程，并由我审阅和测试。',
+		},
+		tags: ['Next.js', 'TypeScript', 'Claude Code'],
 	},
 	{
 		id: 'jobpin-product',
 		image: images.projects.jobpin,
 		title: {
-			en: 'Jobpin hiring product',
-			zh: 'Jobpin 招聘产品',
+			en: 'Jobpin Resume Builder',
+			zh: 'Jobpin 简历生成器',
 		},
 		summary: {
-			en: 'A Next.js hiring platform with resume building, REST APIs, and a six-person delivery loop.',
-			zh: '用 Next.js 做的招聘平台，包含简历生成、REST API，以及六人团队的交付节奏。',
+			en: 'A drag-and-drop resume builder front end with rich-text editing, live preview and PDF export, built with a six-person team during training.',
+			zh: '培训期间与 6 人小组一起做的简历生成器前端，支持拖拽排序、富文本编辑、实时预览和 PDF 导出。',
 		},
-		tags: ['Next.js', 'Node.js', 'MongoDB'],
+		tags: ['Next.js', 'TypeScript', 'Redux Toolkit'],
 	},
 ];

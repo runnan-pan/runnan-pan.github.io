@@ -13,6 +13,7 @@
  * needs a one-off image.
  */
 import portrait from './portraits/portrait.svg';
+import carfacts from './projects/carfacts.svg';
 import dealerSites from './projects/dealer-sites.svg';
 import jobpinProject from './projects/jobpin.svg';
 import typescript from './projects/typescript.svg';
@@ -32,6 +33,7 @@ export const images = {
 	},
 	projects: {
 		dealerSites,
+		carfacts,
 		typescript,
 		jobpin: jobpinProject,
 	},
